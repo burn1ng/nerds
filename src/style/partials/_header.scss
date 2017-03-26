@@ -1,0 +1,80 @@
+header{
+	background: $backgrey;
+}
+nav {	
+	padding: 27px 0 53px;
+	.header-menu-item {
+		display: inline-block;		
+		a {
+			display: block;
+			color: #000;
+			font: 14px/30px $medium;
+			padding: 30px 20px 7px;
+
+		}		
+	}
+	.header-menu-item:last-child {
+		a {
+			padding-left: 50px;
+			position: relative;
+		}
+		a:before {
+			content: "";
+			position: absolute;
+			top:38px;
+			left:26px;
+			@include sprite($icon-basket);
+			opacity: 0.2;
+			transition: opacity .5s;
+		}
+		a:hover:before {
+			opacity: 1;
+		}
+	}
+}
+.carousel {
+	height: 300px;
+	.carousel-control.right,.carousel-control.left {
+		background-image: none;
+	}
+	.carousel-indicators li{
+		width: 12px;
+		height: 12px;
+		background: #fff;
+		position: relative;
+		&.active:before {
+			display: inline-block;
+			content: '';
+			position: absolute;
+			width: 6px;
+			height: 6px;
+			background: $indicators-color;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			border-radius: 50%;
+		}
+	}
+	.item {
+		min-height: 300px;
+		img {
+			max-height: 300px;
+		}
+		.btn {
+			color: #fff;
+			background-color: $color1;
+			font: 12px/25px $medium;
+		}
+	}	
+
+}
+
+@media (max-width: 768px) {
+    .carousel {
+    	height: auto;
+    	.item {
+	    	text-align: center;
+	    	min-height: 350px;
+    	}
+    }  
+}

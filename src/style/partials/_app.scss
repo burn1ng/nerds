@@ -1,0 +1,93 @@
+/* FONTS variables */
+$medium: 'RobotoMedium',sans-serif;
+$light: 'RobotoLight',sans-serif;
+$thin: 'RobotoThin',sans-serif;
+/* COLORS variables */
+$backgrey: #eee;
+$lightgrey: #f1f1f1;
+$text-color: #283136;
+$indicators-color: #c1c1c1;
+
+$color1: #fb565a;
+$color2: #00ca74;
+$color3: #efc84a;
+
+@font-face {
+    font-family: 'RobotoMedium';
+    src: url('../fonts/RobotoMedium.eot');
+    src: url('../fonts/RobotoMedium.eot') format('embedded-opentype'),
+         url('../fonts/RobotoMedium.woff2') format('woff2'),
+         url('../fonts/RobotoMedium.woff') format('woff'),
+         url('../fonts/RobotoMedium.ttf') format('truetype'),
+         url('../fonts/RobotoMedium.svg#RobotoMedium') format('svg');
+}
+@font-face {
+    font-family: 'RobotoLight';
+    src: url('../fonts/RobotoLight.eot');
+    src: url('../fonts/RobotoLight.eot') format('embedded-opentype'),
+         url('../fonts/RobotoLight.woff2') format('woff2'),
+         url('../fonts/RobotoLight.woff') format('woff'),
+         url('../fonts/RobotoLight.ttf') format('truetype'),
+         url('../fonts/RobotoLight.svg#RobotoLight') format('svg');
+}
+@font-face {
+    font-family: 'RobotoThin';
+    src: url('../fonts/RobotoThin.eot');
+    src: url('../fonts/RobotoThin.eot') format('embedded-opentype'),
+         url('../fonts/RobotoThin.woff2') format('woff2'),
+         url('../fonts/RobotoThin.woff') format('woff'),
+         url('../fonts/RobotoThin.ttf') format('truetype'),
+         url('../fonts/RobotoThin.svg#RobotoThin') format('svg');
+}
+
+body {
+	background: #fff;
+	font: 16px/22px $light;
+	color: $text-color;
+}
+h1, h2, h3, h4 {
+	color: #000;
+}
+h2 {
+	font: 36px/36px $medium;
+}
+p {
+	padding: 20px 0;
+}
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+a {
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.container {
+	max-width: 900px;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+
+
+
+// .icon {
+// 	display:inline-block;
+// 	margin: 50px;
+// 	cursor:pointer;
+// 	opacity: .5;
+// 	&:hover {
+// 		opacity: 1;
+// 	}
+// }
+// .icon-vk {
+// 	@include sprite($icon-vk);	
+// }
+// .icon-fb {
+// 	@include sprite($icon-fb);	
+// }
+// .icon-insta {
+// 	@include sprite($icon-insta);	
+// }
