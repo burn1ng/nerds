@@ -51,8 +51,14 @@ h1, h2, h3, h4 {
 h2 {
 	font: 36px/36px $medium;
 }
+h3 {
+	font: 18px/30px $medium;
+	text-transform: uppercase;
+    margin: 25px 0;
+}
 p {
-	padding: 20px 0;
+	padding: 0;
+    margin: 0;
 }
 ul {
 	margin: 0;
@@ -65,9 +71,20 @@ a {
 }
 
 .container {
-	max-width: 900px;
-	padding-right: 10px;
-	padding-left: 10px;
+	max-width: 900px;	
+}
+.btn {
+    color: #fff;
+    font: 12px/25px $medium;
+}
+.btn-type-1 {
+    background-color: $color1;          
+}
+.btn-type-2 {
+    background-color: $color2;          
+}
+.btn-type-3 {
+    background-color: $color3;          
 }
 
 
