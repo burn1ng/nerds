@@ -1,6 +1,6 @@
 {
-  "name": "Burning Starter KIT",
-  "description": "bower plugins for new perfect project",
+  "name": "Nerds layout",
+  "description": "responsive layout nerds",
   "main": "index.js",
   "authors": [
     "andrew.burn1ng <andrew.burn1ng@gmail.com>"
@@ -16,7 +16,6 @@
   ],
   "dependencies": {
     "jquery": "^3.2.1",
-    "normalize-css": "normalize.css#^5.0.0",
-    "bootstrap": "^3.3.7"
+    "bootstrap-sass": "^3.3.7"
   }
 }

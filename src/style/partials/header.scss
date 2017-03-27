@@ -1,17 +1,17 @@
 header{
 	background: $backgrey;
 }
-nav {	
-	padding: 27px 0 53px;
+nav {
+	padding: 28px 0 53px;
 	.header-menu-item {
-		display: inline-block;		
+		display: inline-block;
 		a {
 			display: block;
 			color: #000;
 			font: 14px/30px $medium;
-			padding: 30px 20px 7px;
+			padding: 30px 15px 7px;
 
-		}		
+		}
 	}
 	.header-menu-item:last-child {
 		a {
@@ -65,7 +65,7 @@ nav {
 			background-color: $color1;
 			font: 12px/25px $medium;
 		}
-	}	
+	}
 
 }
 
@@ -76,5 +76,5 @@ nav {
 	    	text-align: center;
 	    	min-height: 350px;
     	}
-    }  
+    }
 }
