@@ -100,7 +100,7 @@ gulp.task('style:build', function () {
     gulp.src(path.src.style) // get only main.scss (all scss files included from partials there)
         .pipe(sass(sassOptions)) //compile sass to css
         .pipe(prefixer(autoPrefixerOptions)) //add prefixes
-        .pipe(cssnano()) // minify
+        //.pipe(cssnano()) // minify
         .pipe(gulp.dest(path.build.css))
         .pipe(reload({stream: true}));
 });

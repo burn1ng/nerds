@@ -87,7 +87,22 @@ a {
     background-color: $color3;          
 }
 
+@media (max-width: 768px) {
+    div {
+        text-align: center;
+    }
+    img {
+        float: none!important;
+        margin: 0 auto;
+    }
+}
 
+section {
+    position: relative;
+    max-width:900px;
+    margin: 0 auto;
+    border-bottom: 2px solid #eee;
+}
 
 
 // .icon {

@@ -55,13 +55,15 @@ nav {
 			border-radius: 50%;
 		}
 	}
-	.item {
-		min-height: 300px;
+	.item {		
 		img {
 			max-height: 300px;
 		}
 		p {
 			margin: 20px 0 30px;
+		}
+		a {
+			width: 240px;
 		}		
 	}
 
@@ -70,9 +72,20 @@ nav {
 @media (max-width: 768px) {
     .carousel {
     	height: auto;
-    	.item {
-	    	text-align: center;
-	    	min-height: 350px;
+    	padding-bottom: 70px;
+    	img {
+    		display: none;
     	}
     }
+}
+
+@media (min-width: 768px) {
+	.carousel {
+		.item {
+			min-height: 300px;
+		}
+		img {
+			float: right;
+		}
+	}
 }
