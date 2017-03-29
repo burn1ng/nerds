@@ -1,3 +1,22 @@
 .brands {
-	
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	max-width: 900px;
+	margin: 0 auto;	
+	.brand-item {
+		padding: 40px 0;
+		opacity: 0.2;
+		transition: opacity .2s;
+		&:hover {
+			opacity: 1;
+		}
+	}
+
+}
+
+@media (max-width: 768px) {
+	.brands {
+		flex-direction: column;
+	}
 }

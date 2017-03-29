@@ -47,11 +47,17 @@
 	
 }
 
-@media (max-width: 768px) {
-	.logo-wrapper {}
-	.products-list {
-		margin: 0 auto;
-    	width: 50%;
-    	text-align: left;
+@media (max-width: 768px) {	
+	.about {
+		.logo-wrapper {
+			width: 80%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.products-list {
+			margin: 0 auto;
+	    	width: 80%;
+	    	text-align: left;
+		}
 	}
 }
