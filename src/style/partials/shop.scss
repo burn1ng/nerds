@@ -20,6 +20,7 @@
 			background: $lightgrey;
 			padding: 40px 30px;
 			border-radius: 5px;
+			margin-bottom: 15px;
 			.irs {
 				height: 0;
 			}
@@ -54,11 +55,31 @@
 				&:hover:before,&:active:before {
 					background: #000;
 				}
-			}
+			}			
 		}
+		.price-range {
+			width: 80px;
+			height: 40px;
+			font: 16px/22px $light;
+			background-color: $lightgrey;
+			border-radius: 5px;
+			border: 0;
+			text-align: center;
+
+		}
+		.price-range:not(:last-child) {
+			margin-right: 27px;
+		}
+		.range-text {
+			position: relative;
+			margin-right: 15px;
+		}
+
 	}	
 	main {
 		flex: 1;
 	}
 }
+
+
 

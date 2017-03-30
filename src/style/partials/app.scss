@@ -93,6 +93,78 @@ label {
     background-color: $color3;          
 }
 
+.custom-radiobox:not(:checked),
+.custom-radiobox:checked,
+.custom-checkbox:not(:checked),
+.custom-checkbox:checked {
+  position: absolute;
+  left: -9999px;
+}
+.custom-radiobox:not(:checked) + label,
+.custom-radiobox:checked + label,
+.custom-checkbox:not(:checked) + label,
+.custom-checkbox:checked + label {
+  position: relative;
+  padding-left: 40px;
+  cursor: pointer;
+  display: block;
+  text-align: left;
+}
+
+// pure fuckin css for custom radiobox! 8-) fuck yeah!
+.custom-radiobox:not(:checked) + label:before,
+.custom-radiobox:checked + label:before {
+    box-sizing: border-box;
+    content: '';
+    position: absolute;
+    left: 0; top: 2px;
+    width: 20px; height: 20px;
+    border: 4px solid #d7dcde;
+    border-radius: 50%;
+    background: #fff;
+}
+
+.custom-radiobox:not(:checked) + label:after,
+.custom-radiobox:checked + label:after {
+  position: absolute;
+  top: 9px;
+  left: 7px;
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #d7dcde;
+  transition: all .2s;
+}
+
+.custom-radiobox:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+.custom-radiobox:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+// checkboxes are implemented with bacground image (sprite)
+.custom-checkbox:not(:checked) + label:before,
+.custom-checkbox:checked + label:before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 0;
+    transition: all .2s;
+}
+.custom-checkbox:not(:checked) + label:before {
+    @include sprite($checkbox_unchecked);
+    transform: scale(1);
+}
+,
+.custom-checkbox:checked + label:before {
+    @include sprite($checkbox_checked);
+    transform: scale(1);
+}
+
 @media (max-width: 768px) {
     div {
         text-align: center;

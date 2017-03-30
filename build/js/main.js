@@ -15110,6 +15110,8 @@ $(document).ready(function(){
 	var $rangeFromField = $("#rangeFrom");
 	var $rangeToField = $("#rangeTo");
 
+	var $rangeField = $(".price-range");
+
 	$range.ionRangeSlider({
 		type: "double",
 		grid: false,
@@ -15144,5 +15146,30 @@ $(document).ready(function(){
 			to: $this.val()
 		});
 	});
+
+	$rangeField.on("keyup", function( event ) {
+		var selection = window.getSelection().toString();
+	    if ( selection !== '' ) {
+	        return;
+	    }
+	    if ( $.inArray( event.keyCode, [38,40,37,39] ) !== -1 ) {
+	        return;
+	    }
+
+		var $this = $( this );
+		var input = $this.val();
+
+		// 2
+		var input = input.replace(/[\D\s\._\-]+/g, "");
+
+		// 3
+		input = input ? parseInt( input, 10 ) : 0;
+
+		// 4
+		$this.val( function() {
+			return ( input === 0 ) ? "" : input.toLocaleString( "ru-RU" );
+		});
+	});
+
 
 });
