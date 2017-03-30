@@ -5,7 +5,8 @@
 //@import "../../bower_components/bootstrap/dist/css/bootstrap.min"; //don't need .css 
 @import "partials/variables";
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
-
+@import "../../bower_components/ion.rangeSlider/css/ion.rangeSlider";
+@import "../../bower_components/ion.rangeSlider/css/ion.rangeSlider.skinHTML5";
 /*
 * Custom .scss
 */
@@ -16,4 +17,6 @@
 @import "partials/about";
 @import "partials/brands";
 @import "partials/shop";
+
+
 

@@ -1,3 +1,64 @@
 .shop {
-	
+	padding: 80px 0;
+	.container {
+		display: flex;
+		justify-content: space-between;
+	}
+	aside {
+		flex: 0 0 260px;
+		margin-right: 60px;
+		display: flex;
+		flex-direction: column;
+		&>div {
+			margin-bottom: 50px;
+		}
+		h3 {
+			margin-top:0;
+			margin-bottom: 20px;
+		}
+		.slide-range-wrapper {
+			background: $lightgrey;
+			padding: 40px 30px;
+			border-radius: 5px;
+			.irs {
+				height: 0;
+			}
+			.irs-line {
+				height: 2px;
+				top: 0;
+			}
+			.irs-line-left, .irs-line-mid, .irs-line-right {				
+				top: -4px;
+			}
+			.irs-bar {
+				height: 2px;
+				top: 0;
+				background-color: $color2;
+				border-color: $color2;
+			}
+			.irs-slider {
+				top: -10px;
+				width: 20px;
+				height: 20px;
+				&:before {
+					content: "";
+					position: absolute;
+					width: 3px;
+					height: 3px;
+					background: #ababab;
+					border-radius: 50%;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%,-50%);
+				}
+				&:hover:before,&:active:before {
+					background: #000;
+				}
+			}
+		}
+	}	
+	main {
+		flex: 1;
+	}
 }
+

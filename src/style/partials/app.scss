@@ -69,6 +69,12 @@ a {
 	text-decoration: none;
 	text-transform: uppercase;
 }
+input:focus {
+    outline: none!important;
+}
+label {
+    cursor: pointer;
+}
 
 .container {
 	max-width: 900px;	

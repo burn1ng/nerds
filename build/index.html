@@ -149,7 +149,86 @@
 	<a target="_blank" href="https://burn1ng.github.io/borodinsky/index.html"><img src="img/brand-3.png" alt="borodinsky" class="brand-item"></a>
 </section>
 <section class="shop">
-	
+	<div class="container">
+
+		<aside>
+			<div class="price">
+				<h3>Стоимость:</h3>
+				<div class="slide-range-wrapper">
+					<input type="text" id="range-input" name="rangeName" value="" />
+				</div>
+				<form action="">
+					<label for="rangeFrom">От</label><input type="number" placeholder="0" id="rangeFrom">
+					<label for="rangeTo">До</label><input type="number" placeholder="15000" id="rangeTo">
+				</form>
+			</div>
+			<div class="grid">
+				<h3>Сетка:</h3>
+				<form action="">
+					<input type="radio" id="radio1" name="grid">
+					<label for="radio1">Адаптивная</label>
+					<input type="radio" id="radio2" name="grid">
+					<label for="radio2">Фиксированная</label>
+					<input type="radio" id="radio3" name="grid">
+					<label for="radio3">Резиновая</label>
+				</form>
+			</div>
+				
+			<div class="properties">
+				<h3>Особенности:</h3>
+				<form action="">
+					<input type="checkbox" id="check1">
+					<label for="check1">Слайдер</label>
+					<input type="checkbox" id="check2">
+					<label for="check2">Блок приемуществ</label>
+					<input type="checkbox" id="check3">
+					<label for="check3">Новости</label>
+					<input type="checkbox" id="check4">
+					<label for="check4">Галерея</label>
+					<input type="checkbox" id="check5">
+					<label for="check5">Корзина</label>
+				</form>
+			</div>		
+		</aside>
+
+		<main>
+			<div class="shop-sort">
+				<span>Сортировать:</span>
+				<span>По цене</span>
+				<span>По типу</span>
+				<span>По функционалу</span>
+			</div>
+			<div class="shop-content">
+				<div class="item">
+					<div class="browser-panel"><img src="img/shop-item-1.jpg" alt="Aviator" class="shop-img img-responsive"></div>
+				</div>
+				<div class="item">
+					<div class="browser-panel"><img src="img/shop-item-2.jpg" alt="Sunset" class="shop-img img-responsive"></div>
+				</div>
+				<div class="item">
+					<div class="browser-panel"><img src="img/shop-item-3.jpg" alt="Forte" class="shop-img img-responsive"></div>
+				</div>
+				<div class="item">
+					<div class="browser-panel"><img src="img/shop-item-4.jpg" alt="Marquee" class="shop-img img-responsive"></div>
+				</div>
+				<div class="item">
+					<div class="browser-panel"><img src="img/shop-item-5.jpg" alt="Avenue" class="shop-img img-responsive"></div>
+				</div>
+				<div class="item">
+					<div class="browser-panel"><img src="img/shop-item-6.jpg" alt="Dovetail" class="shop-img img-responsive"></div>
+				</div>
+			</div>
+			<div class="shop-pagination">
+				<a href="" class="shop-pagination-box btn-prev">Предыдущая</a>
+				<a href="" class="shop-pagination-box">1</a>
+				<a href="" class="shop-pagination-box">2</a>
+				<a href="" class="shop-pagination-box">3</a>
+				<a href="" class="shop-pagination-box btn-next">Следующая</a>
+			</div>
+		</main>
+		
+	</div>
+
 </section>
 
 <script type="text/javascript" src="js/main.js"></script>
