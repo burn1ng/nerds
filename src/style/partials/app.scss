@@ -44,6 +44,7 @@ body {
 	background: #fff;
 	font: 16px/22px $light;
 	color: $text-color;
+  // min-width: 290px;
 }
 h1, h2, h3, h4 {
 	color: #000;
@@ -68,6 +69,10 @@ ul {
 a {
 	text-decoration: none;
 	text-transform: uppercase;
+  color: inherit;
+}
+a:hover,a:active {
+  color: inherit;
 }
 input:focus {
     outline: none!important;
@@ -82,15 +87,27 @@ label {
 .btn {
     color: #fff;
     font: 12px/25px $medium;
+    &:hover, &:active, &:visited {
+      color: #fff;
+    }
 }
 .btn-type-1 {
-    background-color: $color1;          
+    background-color: $color1;   
+    &:hover {
+      background-color: darken( $color1, 10% );
+    }       
 }
 .btn-type-2 {
-    background-color: $color2;          
+    background-color: $color2; 
+    &:hover {
+      background-color: darken( $color2, 10% );
+    }          
 }
 .btn-type-3 {
-    background-color: $color3;          
+    background-color: $color3;   
+    &:hover {
+      background-color: darken( $color3, 10% );
+    }         
 }
 
 .custom-radiobox:not(:checked),

@@ -1,0 +1,38 @@
+.map {
+	max-width: 100%; //override
+	&-box {
+		display: flex;
+		background: #fff;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 25px;
+		width: 240px;
+		height: 250px;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index:1;
+	}
+	.logo {
+		font: 16px/30px $thin;
+		text-transform: uppercase;
+		span {
+			font-family: $medium;
+		}
+	}
+	.address {
+		font: 16px20px $light;
+	}
+	#map {
+		height: 420px;
+	}
+}
+
+@media (max-width: 560px) {
+	.map-box {
+		position: relative;
+		transform: none;
+		width: 90%;
+		margin: auto;
+	}
+}

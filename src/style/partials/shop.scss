@@ -1,16 +1,20 @@
 .shop {
 	padding: 80px 0;
+	//border-bottom: 0;
 	.container {
 		display: flex;
 		justify-content: space-between;
+		flex-wrap: wrap;
 	}
 	aside {
-		flex: 0 0 260px;
-		margin-right: 60px;
-		display: flex;
-		flex-direction: column;
+		max-width: 260px;
+		margin-left: auto;
+		margin-right: auto;
 		&>div {
 			margin-bottom: 50px;
+		}
+		.price {
+			width: 260px;
 		}
 		h3 {
 			margin-top:0;
@@ -77,9 +81,121 @@
 
 	}	
 	main {
-		flex: 1;
+		flex: 1;		
 	}
 }
 
+@media (min-width: 596px) {
+	.shop main {
+		padding-left: 60px;
+	}
+}
+
+.shop-sort {
+	font-size: 0;
+	margin-bottom: 20px;
+	span {
+		display: inline-block;
+		margin-right: 30px;
+		font: 12px/18px $medium;
+		text-transform: uppercase;
+	}
+	span:not(:first-child) {
+		cursor:pointer;
+	}
+	span:last-child:after {
+		content: "";
+		display: inline-block;
+		margin-left: 10px;
+		cursor: pointer;
+		@include sprite($sort_down);
+
+	}
+}
+.shop-content {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	.item {
+		margin: 0 auto 80px;
+		max-width: 240px;
+		cursor: pointer;
+		.browser-panel {
+			position: relative;
+			overflow: hidden;
+			&:before {
+				content: "";
+				display: block;
+				@include sprite($browser-panel);
+				opacity: 0.1;  
+				transition: opacity .2s ease-in-out;
+			}			
+		}
+		&:hover .browser-panel:before {
+			opacity: 1;
+		}
+		&-description {			
+			position: absolute;
+			top: 30px;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			padding: 30px;
+			background-color: #fff;
+			text-align: center;	
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			transition: all .5s ease;
+			transform: scale(0);
+			opacity: 0;
+			h3 {
+				margin: 0;
+			}		
+			a {
+				display: block;
+				font-size: 18px;
+			}	
+		}
+		&:hover .item-description {
+			opacity: 1;
+			transform: scale(1);
+		}
+		& img {
+			transition: all .5s ease;
+		}
+		&:hover img {
+			transform: scale(5);
+			opacity: 0;
+		}
+
+	}
+}
+.shop-pagination {
+	font-size: 0;
+	&-box {
+		box-sizing: content-box;
+		display: inline-block;
+		border: 2px solid $lightgrey;
+		background: $lightgrey;
+		border-radius: 5px;
+		width: 38px;
+		height: 38px;
+		font: 12px/38px $medium;
+		text-align: center;
+		margin: 0 10px 20px 0;
+		&.active {
+			background: #fff;
+			text-decoration: none;
+		}
+		&:hover {
+			border-color: darken( $lightgrey, 20% );
+			text-decoration: none;
+		}
+	}	
+	.btn-prev, .btn-next {
+		width: 140px;
+	}
+}
 
 
