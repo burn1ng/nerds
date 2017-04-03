@@ -6192,14 +6192,23 @@ header {
   background: #eee; }
 
 nav {
-  padding: 28px 0 53px; }
+  padding: 28px 0 53px;
+  -webkit-transition: all 1s;
+  transition: all 1s; }
   nav .header-menu-item {
     display: inline-block; }
+    nav .header-menu-item span {
+      border-bottom: 2px solid transparent; }
     nav .header-menu-item a {
       display: block;
       color: #000;
       font: 14px/30px "RobotoMedium", sans-serif;
       padding: 30px 15px 7px; }
+      nav .header-menu-item a:hover {
+        text-decoration: none; }
+        nav .header-menu-item a:hover span {
+          border-color: #fb565a;
+          padding-bottom: 10px; }
   nav .header-menu-item:last-child a {
     padding-left: 50px;
     position: relative; }
@@ -6245,6 +6254,18 @@ nav {
     margin: 20px 0 30px; }
   .carousel .item a {
     width: 240px; }
+
+.sticky {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  border-top: 0;
+  background: #fff;
+  padding: 0; }
+  .sticky a {
+    padding: 20px 15px; }
 
 @media (max-width: 767px) {
   .carousel {

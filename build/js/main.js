@@ -15109,7 +15109,7 @@ if (typeof jQuery === 'undefined') {
 // //googleMapScript.async = true; //asynchronous
 // document.getElementsByTagName("head")[0].appendChild(googleMapScript);
 
-google.maps.event.addDomListener(window, 'load', init);
+//google.maps.event.addDomListener(window, 'load', init);
 
 
 function init() {
@@ -15303,5 +15303,27 @@ $(document).ready(function(){
 		prevItem.addClass("active");
 	});
 
+
+	// sticky header
+	var stickyNavTop = 400; //set amounts of px, after that - sticky header is ON 
+	//$('.navigation-bar').offset().top; 
+
+	function stickyNav(){
+	var scrollTop = $(window).scrollTop();
+	      
+	if (scrollTop > stickyNavTop) { 
+	    $('.navigation-bar').addClass('sticky');
+	    $('header').css('padding-top', '148px');
+	} else {
+	    $('.navigation-bar').removeClass('sticky'); 
+	    $('header').css('padding-top', '0');
+	}
+	};
+	 
+	stickyNav();
+	 
+	$(window).scroll(function() {
+	  stickyNav();
+	});
 
 });

@@ -3,14 +3,24 @@ header{
 }
 nav {
 	padding: 28px 0 53px;
+	transition: all 1s;
 	.header-menu-item {
 		display: inline-block;
+		span {			
+			border-bottom: 2px solid transparent;
+		}
 		a {
 			display: block;
 			color: #000;
 			font: 14px/30px $medium;
 			padding: 30px 15px 7px;
-
+			&:hover {
+			text-decoration: none;
+				span {
+					border-color: $color1;
+					padding-bottom: 10px;
+				}
+			}
 		}
 	}
 	.header-menu-item:last-child {
@@ -67,6 +77,21 @@ nav {
 		}		
 	}
 
+}
+
+.sticky {
+	//transform: translateY(100%);	
+	position: fixed;
+	width: 100%;
+	left: 0;
+	top: 0;
+	z-index: 100;
+	border-top: 0;
+	background: #fff;
+	padding: 0;
+	& a {
+		padding: 20px 15px;
+	}
 }
 
 @media (max-width: 767px) {
