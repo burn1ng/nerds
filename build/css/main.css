@@ -6573,10 +6573,10 @@ nav {
       font-family: "RobotoMedium", sans-serif; }
   .map .address {
     font: 16px20px "RobotoLight", sans-serif; }
-  .map #map {
+  .map #map, .map #map-mobile {
     height: 420px; }
 
-@media (max-width: 560px) {
+@media (max-width: 767px) {
   .map-box {
     position: relative;
     -webkit-transform: none;

@@ -1,5 +1,5 @@
 .map {
-	max-width: 100%; //override
+	max-width: 100%; //override	
 	&-box {
 		display: flex;
 		background: #fff;
@@ -23,12 +23,12 @@
 	.address {
 		font: 16px20px $light;
 	}
-	#map {
+	#map, #map-mobile {
 		height: 420px;
 	}
 }
 
-@media (max-width: 560px) {
+@media (max-width: 767px) {
 	.map-box {
 		position: relative;
 		transform: none;

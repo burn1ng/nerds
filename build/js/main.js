@@ -15110,12 +15110,19 @@ if (typeof jQuery === 'undefined') {
 // document.getElementsByTagName("head")[0].appendChild(googleMapScript);
 
 google.maps.event.addDomListener(window, 'load', init);
-        
+
+
 function init() {
+	var mapElement = document.getElementById('map');
+	var mapElementMob = document.getElementById('map-mobile');
+
+	var myLatLng = new google.maps.LatLng(53.948602, 27.682395);
+	var myLatLngCenter = new google.maps.LatLng(53.948628, 27.679198);
+
     var mapOptions = {
         zoom: 17,
         scrollwheel: false,
-        center: new google.maps.LatLng(53.9492715,27.6808287),
+        center: myLatLngCenter,
         styles: 
         	[{"featureType":"landscape",
         	"elementType":"labels",
@@ -15151,16 +15158,46 @@ function init() {
         	"elementType":"geometry",
         	"stylers":[{"lightness":57}]}]
     };
-    var mapElement = document.getElementById('map');
+
+    var mapOptionsMob = {
+    	zoom: 15,
+        scrollwheel: false,
+        center: myLatLng
+
+    	};
+
     var map = new google.maps.Map(mapElement, mapOptions);
- 	var gimage = 'img/map-baloon.png';
+    var mapMob =  new google.maps.Map(mapElementMob, mapOptionsMob);
+
+ 	var infowindow = new google.maps.InfoWindow({
+      content: "<B>Заблудились? Вход к нам со стороны внутреннего двора, после арки - направо</B>"
+  	});
 	
+
+	var myMarkerImage = {
+	  url: 'img/map-baloon.png',
+	  size: new google.maps.Size(231, 190),
+	  origin: new google.maps.Point(0, 0)
+	  //anchor: new google.maps.Point(17, 34),
+	  //scaledSize: new google.maps.Size(25, 25)
+	};
+
     var marker = new google.maps.Marker({
-        position: new google.maps.LatLng(53.948415,27.682158),
+        position: myLatLng,
         map: map,
-		icon: gimage,
-        title: 'Тут наш офис'					
-    });
+		icon: myMarkerImage			
+    });  
+    var markerMob = new google.maps.Marker({
+    	position: myLatLng,
+    	map: mapMob
+    }); 
+
+    google.maps.event.addListener(marker, 'click', function() {
+    	infowindow.open(map,marker);
+	}); 
+	google.maps.event.addListener(markerMob, 'click', function() {
+    	infowindow.open(mapMob,markerMob);
+	});
 }
 
 $(document).ready(function(){
