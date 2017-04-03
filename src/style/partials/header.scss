@@ -2,8 +2,7 @@ header{
 	background: $backgrey;
 }
 nav {
-	padding: 28px 0 53px;
-	transition: all 1s;
+	padding: 28px 0 53px;	
 	.header-menu-item {
 		display: inline-block;
 		span {			
@@ -13,7 +12,8 @@ nav {
 			display: block;
 			color: #000;
 			font: 14px/30px $medium;
-			padding: 30px 15px 7px;
+			// padding: 30px 15px 7px;
+			padding: 15px;
 			&:hover {
 			text-decoration: none;
 				span {
@@ -31,7 +31,7 @@ nav {
 		a:before {
 			content: "";
 			position: absolute;
-			top:38px;
+			top:23px;
 			left:26px;
 			@include sprite($icon-basket);
 			opacity: 0.2;
@@ -40,8 +40,18 @@ nav {
 		a:hover:before {
 			opacity: 1;
 		}
+	}	
+}
+
+span.logo {
+	display: none;
+	font: 16px/30px $thin;
+	text-transform: uppercase;
+	span {
+		font-family: $medium;
 	}
 }
+
 .carousel {
 	height: 300px;
 	.carousel-control.right,.carousel-control.left {
@@ -80,7 +90,7 @@ nav {
 }
 
 .sticky {
-	//transform: translateY(100%);	
+	transition: all .5s;	
 	position: fixed;
 	width: 100%;
 	left: 0;
@@ -89,10 +99,50 @@ nav {
 	border-top: 0;
 	background: #fff;
 	padding: 0;
-	& a {
-		padding: 20px 15px;
+	box-shadow: 0px 5px 5px 0px $lightgrey;
+	& img {
+		display: none;
+	}
+	& span.logo {
+		display: inline-block;
+		line-height: 60px;
 	}
 }
+
+.mobile-nav {
+	background: #fff; 
+	box-shadow: 0px 5px 5px 0px $lightgrey;
+	padding-left: 10px;
+	padding-right: 10px;
+	span.logo {
+		display: inline-block;
+		line-height: 44px;
+		float: left;
+	}
+}
+.burger-menu {
+	display: inline-block;
+	cursor:pointer;
+	&-stick1, &-stick2, &-stick3 {
+		width: 35px;
+	    height: 5px;
+	    background-color: #333;
+	    margin: 6px 0;
+	    transition: 0.4s;
+	}
+	.change &-stick1 {
+		transform: rotate(-45deg) translate(-9px, 6px) ;
+	}
+	.change &-stick2 {
+		opacity: 0;
+	}
+	.change &-stick3 {
+		transform: rotate(45deg) translate(-8px, -8px) ;
+	}
+}
+
+
+
 
 @media (max-width: 767px) {
     .carousel {
@@ -101,6 +151,9 @@ nav {
     	img {
     		display: none;
     	}
+    }
+    nav {
+    	display:none;
     }
 }
 

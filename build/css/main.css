@@ -6192,9 +6192,7 @@ header {
   background: #eee; }
 
 nav {
-  padding: 28px 0 53px;
-  -webkit-transition: all 1s;
-  transition: all 1s; }
+  padding: 28px 0 53px; }
   nav .header-menu-item {
     display: inline-block; }
     nav .header-menu-item span {
@@ -6203,7 +6201,7 @@ nav {
       display: block;
       color: #000;
       font: 14px/30px "RobotoMedium", sans-serif;
-      padding: 30px 15px 7px; }
+      padding: 15px; }
       nav .header-menu-item a:hover {
         text-decoration: none; }
         nav .header-menu-item a:hover span {
@@ -6215,7 +6213,7 @@ nav {
   nav .header-menu-item:last-child a:before {
     content: "";
     position: absolute;
-    top: 38px;
+    top: 23px;
     left: 26px;
     background-image: url(../img/sprite.png);
     background-position: -81px -32px;
@@ -6226,6 +6224,13 @@ nav {
     transition: opacity .5s; }
   nav .header-menu-item:last-child a:hover:before {
     opacity: 1; }
+
+span.logo {
+  display: none;
+  font: 16px/30px "RobotoThin", sans-serif;
+  text-transform: uppercase; }
+  span.logo span {
+    font-family: "RobotoMedium", sans-serif; }
 
 .carousel {
   height: 300px; }
@@ -6256,6 +6261,8 @@ nav {
     width: 240px; }
 
 .sticky {
+  -webkit-transition: all .5s;
+  transition: all .5s;
   position: fixed;
   width: 100%;
   left: 0;
@@ -6263,16 +6270,51 @@ nav {
   z-index: 100;
   border-top: 0;
   background: #fff;
-  padding: 0; }
-  .sticky a {
-    padding: 20px 15px; }
+  padding: 0;
+  box-shadow: 0px 5px 5px 0px #f1f1f1; }
+  .sticky img {
+    display: none; }
+  .sticky span.logo {
+    display: inline-block;
+    line-height: 60px; }
+
+.mobile-nav {
+  background: #fff;
+  box-shadow: 0px 5px 5px 0px #f1f1f1;
+  padding-left: 10px;
+  padding-right: 10px; }
+  .mobile-nav span.logo {
+    display: inline-block;
+    line-height: 44px;
+    float: left; }
+
+.burger-menu {
+  display: inline-block;
+  cursor: pointer; }
+  .burger-menu-stick1, .burger-menu-stick2, .burger-menu-stick3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    -webkit-transition: 0.4s;
+    transition: 0.4s; }
+  .change .burger-menu-stick1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px); }
+  .change .burger-menu-stick2 {
+    opacity: 0; }
+  .change .burger-menu-stick3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px); }
 
 @media (max-width: 767px) {
   .carousel {
     height: auto;
     padding-bottom: 70px; }
     .carousel img {
-      display: none; } }
+      display: none; }
+  nav {
+    display: none; } }
 
 @media (min-width: 768px) {
   .carousel .item {

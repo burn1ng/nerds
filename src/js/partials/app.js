@@ -95,6 +95,16 @@ function init() {
 	});
 }
 
+function stickyNav(){
+		if ( $(window).scrollTop() > 200 ) { 
+		    $('.navigation-bar').addClass('sticky');
+		    $('header').css('padding-top', '141px');
+		} else {
+		    $('.navigation-bar').removeClass('sticky'); 
+		   $('header').css('padding-top', '0');
+		}
+	};
+
 $(document).ready(function(){
 
 	// range slider
@@ -116,7 +126,6 @@ $(document).ready(function(){
 	});
 
 	var $rangeData = $range.data("ionRangeSlider");
-
 
 	$range.on("change", function() {
 		var $this = $(this),
@@ -163,6 +172,7 @@ $(document).ready(function(){
 		});
 	});
 
+ //pagination
 
 	$(".shop-pagination-box:first").next().addClass('active');  		//default active- 1st page
 
@@ -200,25 +210,18 @@ $(document).ready(function(){
 
 
 	// sticky header
-	var stickyNavTop = 400; //set amounts of px, after that - sticky header is ON 
-	//$('.navigation-bar').offset().top; 
-
-	function stickyNav(){
-	var scrollTop = $(window).scrollTop();
-	      
-	if (scrollTop > stickyNavTop) { 
-	    $('.navigation-bar').addClass('sticky');
-	    $('header').css('padding-top', '148px');
-	} else {
-	    $('.navigation-bar').removeClass('sticky'); 
-	    $('header').css('padding-top', '0');
-	}
-	};
 	 
 	stickyNav();
 	 
 	$(window).scroll(function() {
 	  stickyNav();
+	});
+
+	//mobile nav 
+
+	$(".burger-menu").on("click", function() {
+		var $this = $(this);
+		$this.toggleClass("change");
 	});
 
 });
