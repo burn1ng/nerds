@@ -95,13 +95,15 @@ function init() {
 	});
 }
 
+
+
 function stickyNav(){
 		if ( $(window).scrollTop() > 200 ) { 
 		    $('.navigation-bar').addClass('sticky');
-		    $('header').css('padding-top', '141px');
+		    $('section-header').css('padding-top', '141px');
 		} else {
 		    $('.navigation-bar').removeClass('sticky'); 
-		   $('header').css('padding-top', '0');
+		   $('section-header').css('padding-top', '0');
 		}
 	};
 
@@ -209,7 +211,7 @@ $(document).ready(function(){
 	});
 
 
-	// sticky header
+	// sticky header on desktop
 	 
 	stickyNav();
 	 
@@ -217,11 +219,75 @@ $(document).ready(function(){
 	  stickyNav();
 	});
 
-	//mobile nav 
+	//mobile nav fixed header
 
 	$(".burger-menu").on("click", function() {
 		var $this = $(this);
-		$this.toggleClass("change");
+		$this.toggleClass("change"); //rotate sticks in burger-icon
 	});
+
+
+	var slideout = new Slideout({ //mobile slideout start 
+	    'panel': document.getElementById('panel'),
+	    'menu': document.getElementById('menu'),
+	    'padding': 256,
+	    'tolerance': 70
+  	});
+
+
+	// open or close slideout, when burger is clicked
+  	$(".burger-menu").click(function() {
+  		slideout.toggle();
+  	});
+
+  	// change burger icon, when slideout open or close by touch
+	slideout.on('open', function () {
+  		$(".burger-menu").addClass("change");
+  	});
+  	slideout.on('close', function () {
+  		$(".burger-menu").removeClass("change");
+  	});
+
+
+	function close(eve) {
+		eve.preventDefault();
+		slideout.close();
+	}
+
+	slideout
+	.on('beforeopen', function() {
+		this.panel.classList.add('panel-open');
+	})
+	.on('open', function() {
+		this.panel.addEventListener('click', close);
+	})
+	.on('beforeclose', function() {
+		this.panel.classList.remove('panel-open');
+		this.panel.removeEventListener('click', close);
+	});
+
+ //  	var fixed = document.querySelector('.mobile-nav');
+
+	// slideout.on('translate', function(translated) {
+	//   fixed.style.transform = 'translateX(' + translated + 'px)';
+	// });
+
+	// slideout.on('beforeopen', function () {
+	//   fixed.style.transition = 'transform 300ms ease';
+	//   fixed.style.transform = 'translateX(256px)';
+	// });
+
+	// slideout.on('beforeclose', function () {
+	//   fixed.style.transition = 'transform 300ms ease';
+	//   fixed.style.transform = 'translateX(0px)';
+	// });
+
+	// slideout.on('open', function () {
+	//   fixed.style.transition = '';
+	// });
+
+	// slideout.on('close', function () {
+	//   fixed.style.transition = '';
+	// });
 
 });

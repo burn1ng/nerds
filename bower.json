@@ -17,6 +17,10 @@
   "dependencies": {
     "jquery": "1.11.3",
     "bootstrap-sass": "^3.3.7",
-    "ion.rangeSlider": "ionrangeslider#^2.1.7"
+    "ion.rangeSlider": "ionrangeslider#^2.1.7",
+    "slideout.js": "https://github.com/mango/slideout.git#^1.0.1"
+  },
+  "devDependencies": {
+    "slideout.js": "https://github.com/mango/slideout.git#^1.0.1"
   }
 }
