@@ -228,8 +228,8 @@ $(document).ready(function(){
 
 
 	var slideout = new Slideout({ //mobile slideout start 
-	    'panel': document.getElementById('panel'),
-	    'menu': document.getElementById('menu'),
+	    'panel': document.getElementById('layout-wrapper'),
+	    'menu': document.getElementById('layout-slideout'),
 	    'padding': 256,
 	    'tolerance': 70
   	});
@@ -250,44 +250,46 @@ $(document).ready(function(){
 
 
 	function close(eve) {
-		eve.preventDefault();
-		slideout.close();
+	  eve.preventDefault();
+	  slideout.close();
 	}
 
 	slideout
-	.on('beforeopen', function() {
-		this.panel.classList.add('panel-open');
-	})
-	.on('open', function() {
-		this.panel.addEventListener('click', close);
-	})
-	.on('beforeclose', function() {
-		this.panel.classList.remove('panel-open');
-		this.panel.removeEventListener('click', close);
+	  .on('beforeopen', function() {
+	    this.panel.classList.add('panel-open');
+	  })
+	  .on('open', function() {
+	    this.panel.addEventListener('click', close);
+	  })
+	  .on('beforeclose', function() {
+	    this.panel.classList.remove('panel-open');
+	    this.panel.removeEventListener('click', close);
+	  });
+
+
+	//correctly push fixed sidebar
+  	var fixed = document.querySelector('.mobile-nav');
+
+	slideout.on('translate', function(translated) {
+	  fixed.style.transform = 'translateX(' + translated + 'px)';
 	});
 
- //  	var fixed = document.querySelector('.mobile-nav');
+	slideout.on('beforeopen', function () {
+	  fixed.style.transition = 'transform 300ms ease';
+	  fixed.style.transform = 'translateX(256px)';
+	});
 
-	// slideout.on('translate', function(translated) {
-	//   fixed.style.transform = 'translateX(' + translated + 'px)';
-	// });
+	slideout.on('beforeclose', function () {
+	  fixed.style.transition = 'transform 300ms ease';
+	  fixed.style.transform = 'translateX(0px)';
+	});
 
-	// slideout.on('beforeopen', function () {
-	//   fixed.style.transition = 'transform 300ms ease';
-	//   fixed.style.transform = 'translateX(256px)';
-	// });
+	slideout.on('open', function () {
+	  fixed.style.transition = '';
+	});
 
-	// slideout.on('beforeclose', function () {
-	//   fixed.style.transition = 'transform 300ms ease';
-	//   fixed.style.transform = 'translateX(0px)';
-	// });
-
-	// slideout.on('open', function () {
-	//   fixed.style.transition = '';
-	// });
-
-	// slideout.on('close', function () {
-	//   fixed.style.transition = '';
-	// });
+	slideout.on('close', function () {
+	  fixed.style.transition = '';
+	});
 
 });
