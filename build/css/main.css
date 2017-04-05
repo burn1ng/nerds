@@ -6243,10 +6243,31 @@ body {
   .slideout-menu img {
     margin-bottom: 50px; }
 
+.layout-slideout-menu-item a {
+  display: block;
+  padding: 20px;
+  border-bottom: 2px solid #eee;
+  font-size: 18px;
+  position: relative; }
+  .layout-slideout-menu-item a:before {
+    position: relative;
+    display: inline-block;
+    content: "";
+    background-image: url(../img/sprite.png);
+    background-position: -65px -32px;
+    width: 16px;
+    height: 16px;
+    margin-right: 12px; }
+
+.layout-slideout-menu-item:last-child a:before {
+  background-image: url(../img/sprite.png);
+  background-position: -99px -32px;
+  width: 16px;
+  height: 13px; }
+
 .slideout-panel {
   position: relative;
   z-index: 1;
-  will-change: transform;
   background-color: #FFF;
   /* A background-color is required */
   min-height: 100vh; }
@@ -6294,7 +6315,7 @@ body {
     top: 23px;
     left: 26px;
     background-image: url(../img/sprite.png);
-    background-position: -81px -32px;
+    background-position: -99px -32px;
     width: 16px;
     height: 13px;
     opacity: 0.2;
@@ -6563,7 +6584,7 @@ span.logo {
     margin-left: 10px;
     cursor: pointer;
     background-image: url(../img/sprite.png);
-    background-position: -99px -32px;
+    background-position: -117px -32px;
     width: 9px;
     height: 9px; }
 
@@ -6743,7 +6764,7 @@ footer {
     transform: translate(-50%, -50%); }
   .icon-vk:after {
     background-image: url(../img/sprite.png);
-    background-position: -65px -32px;
+    background-position: -83px -32px;
     width: 14px;
     height: 16px; }
   .icon-fb:after {
