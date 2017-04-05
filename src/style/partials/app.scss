@@ -74,7 +74,7 @@ a {
 a:hover,a:active {
   color: inherit;
 }
-input:focus {
+input:focus, a:focus, textarea:focus, select:focus {
     outline: none!important;
 }
 label {
@@ -87,7 +87,7 @@ label {
 .btn {
   color: #fff;
   font: 12px/25px $medium;
-  &:hover, &:active, &:visited {
+  &:hover, &:active, &:visited, &:focus {
     color: #fff;
   }
   &-type-1 {
@@ -108,7 +108,30 @@ label {
       background-color: darken( $color3, 10% );
     }         
   } 
+  &-type-4 {
+  background-color: $lightgrey; 
+  color: #000;  
+    &:hover {
+      background-color: darken( $lightgrey, 10% );
+    }         
+  } 
 }
+
+
+@mixin placeholder() {
+  font: 12px/18px $medium;
+  text-transform: uppercase;
+}
+
+::-webkit-input-placeholder {@include placeholder();}
+::-moz-placeholder          {@include placeholder();}/* Firefox 19+ */
+:-moz-placeholder           {@include placeholder();}/* Firefox 18- */
+:-ms-input-placeholder      {@include placeholder();}
+
+:focus::-webkit-input-placeholder {color: transparent}
+:focus::-moz-placeholder          {color: transparent}
+:focus:-moz-placeholder           {color: transparent}
+:focus:-ms-input-placeholder      {color: transparent}
 
 //custom radiobox and checkbox
 .custom-radiobox:not(:checked),
@@ -313,6 +336,68 @@ body {
     padding-top:39px;
   }
 } 
+
+//customize modal
+@media (min-width:768px) {
+  .modal-dialog {
+    width: 630px;
+  }
+  .modal-body {
+    padding: 0;
+  }
+}
+.modal-content {
+  padding: 50px 80px;
+}
+.feedback-form {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;  
+  & .full-width {
+    flex: 1 100%;
+  }
+  & .half-width {
+    flex: 0 47%;
+  }
+  &-input {
+    margin-bottom: 20px;
+    flex: 1 215px;
+  }
+  & label {
+    display: block;
+    font: 16px/18px $medium;
+    margin-bottom: 12px;
+    text-align: left;
+  }
+  & input, & textarea {
+    border: 2px solid $lightgrey;
+    border-radius: 5px;
+    padding: 7px;
+    text-align: left;
+  }
+  & input {
+    width: 100%;
+  }
+  & textarea {
+    width: 100%;
+  }
+  & a {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 0;
+  }  
+}
+
+@media (max-width: 480px) {
+  .half-width {
+    flex: 1 100%!important;
+  }
+}
+
 
 
 // .icon {

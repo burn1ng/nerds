@@ -15944,4 +15944,19 @@ $(document).ready(function(){
 	  fixed.style.transition = '';
 	});
 
+	
+
+	// send form
+	$('#submitForm').on('click', function(e) {
+		e.preventDefault(); 
+		//$(this).closest('form').submit(); // submit
+		$(this).closest('form').trigger('reset'); //reset form
+		return false; 
+	});
+
+	//reset form when modal is closed
+	$('#myModal').on('hidden.bs.modal', function (e) {
+	  $('#feedback').trigger( 'reset' );
+	})
+
 });

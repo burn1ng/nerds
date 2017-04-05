@@ -330,7 +330,7 @@
 			<span class="address">220125, Минск, <br>
 			ул. Городецкая, 22</span>
 			<span class="address">тел. <a href="tel:+375293551080">+375 (29) 355-10-80</a></span>
-			<a href="#" class="btn btn-type-1">Напишите нам</a>
+			<a href="#myModal" class="btn btn-type-1" data-toggle="modal">Напишите нам</a>
 		</div>
 	</div>
 	<div id="map" class="hidden-xs" data-slideout-ignore></div>
@@ -352,6 +352,36 @@
 </footer>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <form method="POST" id="feedback" class="feedback-form" action="#">
+        	<div class="feedback-form-input half-width">
+        		<label for="form-name">Ваше имя:</label>
+        		<input id="form-name" type="text" name="userName" placeholder="Представьтесь пожалуйста">
+        	</div>
+        	
+        	<div class="feedback-form-input half-width">
+        		<label for="form-name">Ваш e-mail:</label>
+        		<input id="form-email" type="text" name="userEmail" placeholder="Для отправки ответа">
+        	</div>
+			
+			<div class="feedback-form-input full-width">
+				<label for="user-message">Текст письма:</label>
+	        	<textarea name="userMessage" id="user-message" placeholder="В свободной форме"></textarea>
+	        </div>
+        	
+    		<a id="submitForm" href="#" class="btn btn-type-1 half-width">Отправить</a>
+    		<a href="#" class="btn btn-type-4 half-width" data-dismiss="modal" aria-label="Close">Отмена</a>
+        	
+        </form>
+      </div>
+      
+    </div>
+  </div>
+</div>
 
 
 <!-- </div> -->
