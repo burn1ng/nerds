@@ -6080,21 +6080,18 @@ label {
   font: 12px/25px "RobotoMedium", sans-serif; }
   .btn:hover, .btn:active, .btn:visited {
     color: #fff; }
-
-.btn-type-1 {
-  background-color: #fb565a; }
-  .btn-type-1:hover {
-    background-color: #fa2429; }
-
-.btn-type-2 {
-  background-color: #00ca74; }
-  .btn-type-2:hover {
-    background-color: #009757; }
-
-.btn-type-3 {
-  background-color: #efc84a; }
-  .btn-type-3:hover {
-    background-color: #ebba1b; }
+  .btn-type-1 {
+    background-color: #fb565a; }
+    .btn-type-1:hover {
+      background-color: #fa2429; }
+  .btn-type-2 {
+    background-color: #00ca74; }
+    .btn-type-2:hover {
+      background-color: #009757; }
+  .btn-type-3 {
+    background-color: #efc84a; }
+    .btn-type-3:hover {
+      background-color: #ebba1b; }
 
 .custom-radiobox:not(:checked),
 .custom-radiobox:checked,
@@ -6236,17 +6233,20 @@ body {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   z-index: 0;
+  background: #F7F6F9;
+  padding: 39px 10px;
   display: none; }
-
-.slideout-menu-left {
-  left: 0; }
-
-.slideout-menu-right {
-  right: 0; }
+  .slideout-menu-left {
+    left: 0; }
+  .slideout-menu-right {
+    right: 0; }
+  .slideout-menu img {
+    margin-bottom: 50px; }
 
 .slideout-panel {
   position: relative;
   z-index: 1;
+  will-change: transform;
   background-color: #FFF;
   /* A background-color is required */
   min-height: 100vh; }
@@ -6260,7 +6260,7 @@ body {
   display: block; }
 
 .slideout-open .slideout-panel {
-  box-shadow: -10px 0px 10px 1px #f1f1f1; }
+  box-shadow: -10px 0px 10px 1px rgba(0, 0, 0, 0.1); }
 
 @media (max-width: 767px) {
   .slideout-panel {

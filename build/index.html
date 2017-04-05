@@ -11,7 +11,24 @@
 
 <nav id="layout-slideout">
   <header>
-    <h2>Menu</h2>
+    <img src="img/logo-top.png" alt="логотип" class="center-block">
+    <ul class="layout-slideout-menu">
+		<li class="layout-slideout-menu-item">
+			<a href="#"><span>Студия</span></a>
+		</li>
+		<li class="layout-slideout-menu-item">
+			<a href="#"><span>Клиенты</span></a>
+		</li>
+		<li class="layout-slideout-menu-item">
+			<a href="#"><span>Магазин</span></a>
+		</li>
+		<li class="layout-slideout-menu-item">
+			<a href="#"><span>Контакты</span></a>
+		</li>
+		<li class="layout-slideout-menu-item">
+			<a class="icon-basket" href="#"><span>Корзина</span></a>
+		</li>
+	</ul>
   </header>
 </nav>
 
@@ -306,7 +323,7 @@
 	</div>
 
 </section>
-<section class="map">
+<section class="map" data-slideout-ignore>
 	<div class="container">
 		<div class="map-box">
 			<span class="logo"><span>NЁRDS</span> Design Studio</span>
@@ -316,8 +333,8 @@
 			<a href="#" class="btn btn-type-1">Напишите нам</a>
 		</div>
 	</div>
-	<div id="map" class="hidden-xs"></div>
-	<div id="map-mobile" class="visible-xs-block"></div>
+	<div id="map" class="hidden-xs" data-slideout-ignore></div>
+	<div id="map-mobile" class="visible-xs-block" data-slideout-ignore></div>
 </section>
 <footer>
 	<div class="container">
