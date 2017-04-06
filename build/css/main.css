@@ -6709,6 +6709,9 @@ span.logo {
         transition: opacity .2s ease-in-out; }
     .shop-content .item:hover .browser-panel:before {
       opacity: 1; }
+    .shop-content .item:hover .browser-panel {
+      border-radius: 5px 5px 0 0;
+      box-shadow: 0 0 3px 5px #f1f1f1; }
     .shop-content .item-description {
       position: absolute;
       top: 30px;
